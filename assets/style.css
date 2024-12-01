@@ -285,8 +285,9 @@ align-items: start;
 ;
 }
 section img {
-width: 100%;
-height: 100%;
+/* width: 100%;
+height: 100%; */
+border-radius: 8px;
 }
 .section-2 .middle-box .part-1 {
     width: 48%;
@@ -683,6 +684,27 @@ height: 230px;
         margin-bottom: 0px !important;
     }
     .section-15 .light-box .play-button{
+        width: 50px !important;
+        height: 50px !important;
+    }
+ .section-2 img , .section-3 img , .section-11 img , .section-7 img , .section-8 img{
+    width: 100% !important;
+    height: 300px !important;
+ }
+ .send-button {
+    height: 60px !important;
+    width: 100% !important;
+ }
+ .email-header input{
+    width: 100%  !important;
+ }
+ .email .part-2{
+    width: 100% !important;
+ }
+ .email{
+    flex-wrap: wrap-reverse !important;
+ }
+    .section-1 .social-icons img {
         width: 50px !important;
     }
     main{
@@ -1097,7 +1119,7 @@ color: #1179fc;
 }
 .section-15 .light-box{
     z-index: 5;
-    background-image: url("https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/664f8d498e41cbc53185f151_Rectangle%207171.png");
+    /* background-image: url("https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/664f8d498e41cbc53185f151_Rectangle%207171.png"); */
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1118,6 +1140,7 @@ color: #1179fc;
 }
 .section-15 .light-box  .play-button{
     width: 100px;
+    height: 100px;
     margin: auto;
     position: absolute;
     inset: 0%;
