@@ -73,7 +73,7 @@
 }
 
 .pricing-card {
-    min-height: 300px;
+    min-height: 200px;
     background: var(--marketing-white, #fff);
     color: #000;
     gap: 32px;

@@ -1,6 +1,6 @@
 const rangeSlider = document.getElementById("priceRange"),
     selectedAmount = document.getElementById("selectedAmount"),
-    amounts = [25000, 50000, 75000, 100000, 200000, 500000, 750000, 1000000, 1500000, 2000000, 3000000, 4000000, 5000000, 10000000],
+    amounts = [25000, 50000, 75000, 100000, 200000, 500000, 750000, 1000000, 1500000, 2000000],
     rangeTicksContainer = document.querySelector(".range-ticks");
 
 const pricingCards = document.querySelectorAll('.pricing-card');
@@ -77,26 +77,7 @@ function updatePricing(selectedValue) {
             SilverAmount = "$2000.00";
             GoldAmount = "$2400.00";
             break;
-        case 3000000:
-            BronzeAmount = "$1400.00";
-            SilverAmount = "$2200.00";
-            GoldAmount = "$2800.00";
-            break;
-        case 4000000:
-            BronzeAmount = "$1600.00";
-            SilverAmount = "$2400.00";
-            GoldAmount = "$3000.00";
-            break;
-        case 5000000:
-            BronzeAmount = "$1800.00";
-            SilverAmount = "$2600.00";
-            GoldAmount = "$3200.00";
-            break;
-        case 10000000:
-            BronzeAmount = "$3600.00";
-            SilverAmount = "$5200.00";
-            GoldAmount = "$65000.00";
-            break;
+
         default:
             BronzeAmount = `$${(selectedValue / 100).toFixed(2)}`;
             SilverAmount = `$${(selectedValue / 100).toFixed(2)}`;
@@ -117,9 +98,9 @@ rangeSlider.addEventListener("input", function () {
     const toggle = document.getElementById("toggle");
 
     if (toggle.checked) {
-        selectedAmount.textContent = `Send ${(selectedValue.toLocaleString())} Yearly Emails`;
+        selectedAmount.textContent = `Send up to ${(selectedValue.toLocaleString())} Yearly Emails`;
     } else {
-        selectedAmount.textContent = `Send ${(selectedValue.toLocaleString())} Monthly Emails`;
+        selectedAmount.textContent = `Send up to ${(selectedValue.toLocaleString())} Monthly Emails`;
     }
 
     updatePricing(selectedValue);
@@ -154,7 +135,7 @@ pricingCards.forEach(card => {
 });
 
 const initialIndex = parseInt(rangeSlider.value);
-selectedAmount.textContent = `Send ${amounts[initialIndex].toLocaleString()} Monthly Emails`;
+selectedAmount.textContent = `Send up to ${amounts[initialIndex].toLocaleString()} Monthly Emails`;
 rangeSlider.style.background = `linear-gradient(to right, #4674C6 0%, #4674C6 0%, #6a90b159 0%, #6a90b159 100%)`;
 updateActiveCard(pricingCards[0]);
 const toggle = document.getElementById("toggle");
@@ -168,12 +149,12 @@ toggle.addEventListener('change', function () {
 
     if (toggle.checked) {
         totalPriceSpan.textContent = "Total Yearly Prices";
-        selectedAmount.textContent = `Send ${(selectedValue.toLocaleString())} Yearly Emails`;
+        selectedAmount.textContent = `Send up to ${(selectedValue.toLocaleString())} Yearly Emails`;
         leftText.style.color = "#b3b3b3";
         rightText.style.color = "#000";
     } else {
         totalPriceSpan.textContent = "Total Monthly Prices";
-        selectedAmount.textContent = `Send ${(selectedValue.toLocaleString())} Monthly Emails`;
+        selectedAmount.textContent = `Send up to ${(selectedValue.toLocaleString())} Monthly Emails`;
         leftText.style.color = "#000";
         rightText.style.color = "#b3b3b3";
     }
