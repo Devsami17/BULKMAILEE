@@ -16,3 +16,36 @@ document.getElementById("hamburger").addEventListener("click", function() {
 
 
 
+const servicesAnchor = document.getElementById('services-anchor');
+const servicesDropdown = document.querySelector('.services-dropdown');
+
+function showDropdown() {
+  servicesDropdown.style.display = 'flex';
+  servicesDropdown.style.opacity = '1';
+}
+
+function hideDropdown() {
+  servicesDropdown.style.display = 'none';
+  servicesDropdown.style.opacity = '0';
+}
+
+servicesAnchor.addEventListener('mouseover', showDropdown);
+servicesDropdown.addEventListener('mouseover', function() {
+  servicesDropdown.style.display = 'flex';
+  servicesDropdown.style.opacity = '1';
+});
+
+servicesAnchor.addEventListener('mouseout', function(event) {
+  if (!servicesDropdown.contains(event.relatedTarget)) {
+    hideDropdown();
+  }
+});
+servicesDropdown.addEventListener('mouseout', function(event) {
+  if (!servicesAnchor.contains(event.relatedTarget)) {
+    hideDropdown();
+  }
+});
+
+// document.querySelectorAll('.services-dropdown .item').forEach((item)=>item.addEventListener("click",function(){
+//     window.location.replace="services.html"
+// }))

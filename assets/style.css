@@ -600,6 +600,9 @@ opacity: 1;
     .header-1{
         display: none !important;
     }
+    header .services-dropdown{
+        display: none !important;
+    }
     .header-2{
         display: flex !important;
         justify-content: space-between;
@@ -836,6 +839,9 @@ margin-top: 0px !important;
     }
     .section-1 p{
         font-size: 25px !important;
+    }
+    header .services-dropdown{
+        width: 50% !important;
     }
 }
 .login-area .logo-area
@@ -1159,4 +1165,48 @@ color: #1179fc;
 }
 .tag-line p{
     padding-top: 2px;
+}
+.section-7 p{
+    font-size: 18px;
+    font-family: var(--font);
+}
+header .services-dropdown{
+    background-color: rgb(250, 250, 250);
+    display: none;
+    opacity: 0;
+    border: 2px solid #d9d9d9;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px 25px;
+    z-index: 2;
+    top: 56px;
+    position: absolute;
+    transition: opacity 0.3s ease;
+    justify-content: space-between;
+}
+
+header .services-dropdown .column .item img{
+    height: 30px;
+    width: 30px;
+}
+header .services-dropdown .column .item{
+    display: flex;
+    justify-content: normal;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+header .services-dropdown .column .item h6{
+font-size: 20px;
+font-weight: 600;
+font-family: var(--heading);
+margin-bottom: 0px;
+}
+header .services-dropdown .column .item p{
+    font-size: 16px;
+    font-family: var(--font);
+}
+header .services-dropdown .column {
+    width: 32%;
 }
