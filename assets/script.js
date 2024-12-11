@@ -16,35 +16,45 @@ document.getElementById("hamburger").addEventListener("click", function() {
 
 
 
-const servicesAnchor = document.getElementById('services-anchor');
-const servicesDropdown = document.querySelector('.services-dropdown');
+document.addEventListener('DOMContentLoaded', function () {
+  const servicesAnchor = document.getElementById('services-anchor');
+  const servicesDropdown = document.querySelector('.services-dropdown');
+  const header = document.querySelector('.header-1');
 
-function showDropdown() {
-  servicesDropdown.style.display = 'flex';
-  servicesDropdown.style.opacity = '1';
-}
+  let firstHover = true; // Track the first hover interaction
 
-function hideDropdown() {
-  servicesDropdown.style.display = 'none';
-  servicesDropdown.style.opacity = '0';
-}
+  servicesAnchor.addEventListener('mouseenter', function () {
+    if (firstHover) {
+      const bounding = header.getBoundingClientRect();
+      const fromTop = bounding.bottom >= 0; // Check if hovering comes from the top
+      if (fromTop) {
+        servicesDropdown.classList.remove('visible'); // Do not open dropdown
+      } else {
+        servicesDropdown.classList.add('visible'); // Open dropdown
+      }
+      firstHover = false; // Disable this logic for subsequent interactions
+    } else {
+      servicesDropdown.classList.add('visible');
+    }
+  });
 
-servicesAnchor.addEventListener('mouseover', showDropdown);
-servicesDropdown.addEventListener('mouseover', function() {
-  servicesDropdown.style.display = 'flex';
-  servicesDropdown.style.opacity = '1';
-});
+  servicesDropdown.addEventListener('mouseenter', function () {
+    servicesDropdown.classList.add('visible');
+  });
 
-servicesAnchor.addEventListener('mouseout', function(event) {
-  if (!servicesDropdown.contains(event.relatedTarget)) {
-    hideDropdown();
+  function hideDropdown(e) {
+    if (
+      !header.contains(e.relatedTarget) &&
+      !servicesDropdown.contains(e.relatedTarget)
+    ) {
+      servicesDropdown.classList.remove('visible');
+    }
   }
+
+  header.addEventListener('mouseleave', hideDropdown);
+  servicesDropdown.addEventListener('mouseleave', hideDropdown);
 });
-servicesDropdown.addEventListener('mouseout', function(event) {
-  if (!servicesAnchor.contains(event.relatedTarget)) {
-    hideDropdown();
-  }
-});
+
 
 // document.querySelectorAll('.services-dropdown .item').forEach((item)=>item.addEventListener("click",function(){
 //     window.location.replace="services.html"
