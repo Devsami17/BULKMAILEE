@@ -1294,7 +1294,7 @@ header .services-dropdown .column {
     text-align: start;
     height: 82px;
     color: lightcoral;
-    animation: moveUp 10s linear infinite;
+    animation: moveUp 14s linear infinite;
   }
   
   @keyframes moveUp {
