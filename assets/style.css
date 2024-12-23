@@ -1283,3 +1283,63 @@ header .services-dropdown .column {
     font-weight: 400;
     margin-bottom: 25px;
 }
+.text-container {
+    display: inline-flex;
+    flex-direction: column;
+    height: 82px;
+    overflow: hidden;
+  }
+  
+  .text-container span {
+    text-align: start;
+    height: 82px;
+    color: lightcoral;
+    animation: moveUp 10s linear infinite;
+  }
+  
+  @keyframes moveUp {
+    0% {
+      transform: translateY(0);
+    }
+    
+    5% {
+      transform: translateY(0);
+    }
+  
+    15% {
+      transform: translateY(-82px);
+    }
+  
+    25% {
+      transform: translateY(-82px);
+    }
+  
+    35% {
+      transform: translateY(-164px);
+    }
+  
+    45% {
+      transform: translateY(-164px);
+    }
+  
+    55% {
+      transform: translateY(-246px);
+    }
+  
+    65% {
+      transform: translateY(-246px);
+    }
+  
+    75% {
+      transform: translateY(-328px);
+    }
+  
+    95% {
+      transform: translateY(-328px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
