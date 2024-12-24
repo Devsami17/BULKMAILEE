@@ -683,6 +683,14 @@ height: 230px;
     }
 }
 @media only screen and (min-width:320px) and (max-width:600px){
+   
+   .text-container {
+    height: 60px !important;
+   }
+     .text-container span {
+        height: 60px !important;
+          animation: respo 12s  infinite !important;
+     }
     .main-banner h1{
         font-size: 40px !important;
     }
@@ -852,7 +860,54 @@ margin-top: 0px !important;
     header .services-dropdown{
         width: 50% !important;
     }
+
 }
+
+     @keyframes respo {
+    0% {
+      transform: translateY(0) ;
+    }
+    
+    5% {
+      transform: translateY(-60px) ;
+    }
+  
+    15% {
+      transform: translateY(-60px) ;
+    }
+  
+    25% {
+      transform: translateY(-100px);
+    }
+  
+    35% {
+      transform: translateY(-100px) ;
+    }
+  
+    45% {
+      transform: translateY(-160px) ;
+    }
+  
+    55% {
+      transform: translateY(-160px) ;
+    }
+  
+    65% {
+      transform: translateY(-220px) ;
+    }
+  
+    75% {
+      transform: translateY(-220px) ;
+    }
+  
+    95% {
+      transform: translateY(-280px) ;
+    }
+  
+    100% {
+      transform: translateY(-220px) ;
+    }
+  }
 .login-area .logo-area
 {
     display: flex;
